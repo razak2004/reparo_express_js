@@ -1,0 +1,108 @@
+* {
+  font-family: "Lexend Deca", sans-serif;
+}
+.section {
+  width: 100%;
+  margin-left: 250px;
+  /* background-color: black; */
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  /* display: flex; */
+  /* background-color: aqua; */
+
+  font-family: "Lexend Deca", sans-serif;
+}
+.section form {
+  width: 95%;
+  height: 750px;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  margin-top: 10px;
+}
+
+.personalDetails,
+.workshopDetails,
+.serviceDetails {
+  width: 300px;
+  height: 250px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+
+  background-color: var(--white);
+}
+.containerOutput {
+  background-color: white;
+  height: 45px;
+  border-radius: 20px;
+  width: 90%;
+  gap: 3%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  margin-top: 15px;
+}
+.containerOutput input {
+  width: 80%;
+  border: none;
+  outline: none;
+}
+.workshopDetails {
+  height: 440px;
+}
+.serviceDetails {
+  height: 300px;
+  padding-bottom: 20px;
+  align-items: center;
+  /* width: 400px; */
+}
+.serviceDetails input {
+  width: 15%;
+}
+#Addphoto {
+  font-size: 15pc;
+  margin-left: 50px;
+}
+form p {
+  margin-left: 50px;
+}
+.images {
+  width: 380px;
+  height: 700px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.btnContainer {
+  width: 93%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+  background-color: black;
+  color: white;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+.btnContainer button {
+  width: 45%;
+  height: 80%;
+  border-radius: 20px;
+}

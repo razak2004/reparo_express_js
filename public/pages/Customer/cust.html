@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css"
+    />
+
+    <title>Customer Dashboard</title>
+    <!-- <link rel="stylesheet" href="../../assets/css/admin.css" /> -->
+    <link rel="stylesheet" href="../../assets/css/customer.css" />
+  </head>
+
+  <body>
+    <nav>
+      <img src="../../assets/images/logo.png" alt="logo" />
+      <ul>
+        <li>
+          <a href="./cust.html" style="background-color: white; color: #fe3044">
+            <i class="material-symbols-outlined"> dashboard </i>
+            <p>Home</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="./customerActivity.html">
+            <i class="material-symbols-outlined"> activity_zone </i>
+            <p>Booking</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="./cus_profile.html">
+            <i class="material-symbols-outlined"> account_circle </i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li>
+          <a href="./customerService.html">
+            <span class="material-symbols-outlined"> local_activity </span>
+            <p>Your Services</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="material-symbols-outlined"> settings </span>
+            <p>Settings</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="section">
+      <h1 id="userName"></h1>
+      <p>
+        Stuck on the road? <br />
+        Don't fret, our expert mechanics fix your vehicle.
+      </p>
+      <h1>Please fill the details to contact you !</h1>
+      <form class="sectionForm" id="liveBookingForm">
+        <div class="form">
+          <h3>
+            Location & Vehicle Details
+            <button id="liveAddress">
+              <span class="material-symbols-outlined"> distance </span>Get
+              location
+            </button>
+          </h3>
+          <div class="inputFeild">
+            <h5>Select Country:</h5>
+            <select name="Country" id="countries" required>
+              <option value="" id="countryOption">Select Your country</option>
+            </select>
+            <span class="material-symbols-outlined"> flag </span>
+          </div>
+          <div class="inputFeild">
+            <h5>Select State:</h5>
+            <select name="State" id="state" required>
+              <option value="" id="stateOption">Select Your State</option>
+            </select>
+            <span class="material-symbols-outlined"> domain </span>
+          </div>
+          <div class="inputFeild">
+            <h5>Select District:</h5>
+            <select name="district" id="district" required>
+              <option value="" id="cityOption">Select Your district</option>
+            </select>
+            <span class="material-symbols-outlined"> location_city </span>
+          </div>
+          <div class="inputAddressFeild">
+            <h4>Enter Address</h4>
+            <input type="text" id="address" required />
+          </div>
+          <div class="inputFeild">
+            <h5>Select vehicle :</h5>
+            <select name="vehicle" required id="vehicleType">
+              <option value="" selected>Select Your vehicle</option>
+              <option value="2">2 wheelers</option>
+              <option value="3">3 wheelers</option>
+              <option value="4">4 wheelers</option>
+            </select>
+            <span class="material-symbols-outlined">
+              emoji_transportation
+            </span>
+          </div>
+        </div>
+        <div class="form">
+          <div class="inputFeild">
+            <h5>Select company:</h5>
+            <select name="company" required id="vehicleCompany">
+              <option value="" selected hidden>Select Your company</option>
+            </select>
+            <span class="material-symbols-outlined">
+              emoji_transportation
+            </span>
+          </div>
+          <div class="inputFeild">
+            <h5>Select Model:</h5>
+            <select name="model" id="vehicleModel" required>
+              <option value="" selected hidden>Select Your model</option>
+            </select>
+            <span class="material-symbols-outlined">
+              emoji_transportation
+            </span>
+          </div>
+          <div class="inputFeild">
+            <h5>Vehicle number :</h5>
+            <input
+              type="text"
+              required
+              id="vehicleNumber"
+              pattern="^[A-Z]{2}\d{2}[A-Z]{2}\d{4}$"
+              title="enter valid vehicle number ex: TN12AB1234"
+            />
+            <span class="material-symbols-outlined">
+              emoji_transportation
+            </span>
+          </div>
+          <div class="inputFeild">
+            <h5>Vehicle Year :</h5>
+            <input
+              type="text"
+              required
+              id="vehicleYear"
+              pattern="[0-9]{4}"
+              title="Year must be in 4 digits without spaces or alphabets "
+            />
+            <span class="material-symbols-outlined">
+              emoji_transportation
+            </span>
+          </div>
+          <div class="inputAddressFeild">
+            <h4>Describe your problem</h4>
+            <input type="text" required id="vehicleProblem" />
+          </div>
+          <button type="submit">
+            <span class="material-symbols-outlined"> wifi_tethering </span>Find
+            workshop
+          </button>
+        </div>
+      </form>
+      <div class="workShopOuterContainer">
+        <h1>Find the WorkShop which suits you !!</h1>
+        <div class="workshopContainer">
+          <div class="workshopNav">
+            <div class="search">
+              <input
+                type="search"
+                name=""
+                id="searchbar"
+                placeholder="Search for the service center"
+              />
+              <span class="material-symbols-outlined"> search </span>
+            </div>
+            <button id="filter" class="filter">
+              <span class="material-symbols-outlined"> filter_alt </span>Filter
+            </button>
+          </div>
+          <div class="workshops" id="workshopsContainer">
+            <div class="filterTop">
+              <div class="extendFilter">
+                <div id="locationInp" class="locationInput">
+                  <select name="state" id="">
+                    <option value="">Select state</option>
+                  </select>
+                  <select name="City" id="">
+                    <option value="">Select City</option>
+                  </select>
+                  <button>
+                    <span class="material-symbols-outlined"> pin_drop </span>
+                    Get location
+                  </button>
+                </div>
+                <div id="vehicleInp" class="locationInput">
+                  <button id="twoWheeler">
+                    <span class="material-symbols-outlined"> two_wheeler </span
+                    >2 wheelers
+                  </button>
+                  <button id="threeWheeler">
+                    <span class="material-symbols-outlined">
+                      electric_rickshaw </span
+                    >3 wheelers
+                  </button>
+                  <button id="fourWheeler">
+                    <span class="material-symbols-outlined">
+                      directions_car </span
+                    >4 wheelers
+                  </button>
+                </div>
+              </div>
+              <div id="filterButtons" class="filterOptions">
+                <button id="locationFil">
+                  <span class="material-symbols-outlined"> pin_drop </span
+                  >Location
+                </button>
+                <button id="vehicleFil">
+                  <span class="material-symbols-outlined"> directions_car </span
+                  >Vehicle
+                </button>
+              </div>
+            </div>
+            <div id="workshops" class="workshopCont"></div>
+          </div>
+          <div class="workshops" id="workshopCard" style="display: none"></div>
+        </div>
+      </div>
+      <div class="serviceOuterContainer">
+        <h1>Book the Best service For your vehicle !</h1>
+        <div class="serviceContainer">
+          <div class="container">
+            <div class="card_box">
+              <span></span>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card_box">
+              <span></span>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card_box">
+              <span></span>
+            </div>
+          </div>
+          <div class="container">
+            <div class="card_box">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
+    <script src="../../assets/javascript/validationsApi.js"></script>
+    <script src="../../assets/javascript/customerBookingApi.js"></script>
+    <script src="../../assets/javascript/customerApiFunctions.js"></script>
+    <script src="../../assets/javascript/customerApi.js"></script>
+    <script src="../../assets/javascript/customerBuildInFunction.js"></script>
+    <script src="../../assets/javascript/customer_function.js"></script>
+    <script src="../../assets/javascript/buildedfunction.js"></script>
+    <script src="../../assets/javascript/customer.js"></script>
+     -->
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
+
+    <script src="../../assets/javascript/sourceApi/apiService.js"></script>
+    <script src="../../assets/javascript/validationFunctions.js"></script>
+    <script src="../../assets/javascript/customer/customerDOMFunctions.js"></script>
+    <script src="../../assets/javascript/customer/customerHome.js"></script>
+    <script src="../../assets/javascript/JSON.js"></script>
+    <script src="../../assets/javascript/customer_function.js"></script>
+
+    <script src="../../assets/javascript/customer/customer.js"></script>
+  </body>
+</html>

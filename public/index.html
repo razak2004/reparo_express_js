@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reparo</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css"
+    />
+  </head>
+  <body>
+    <!-- header starts -->
+    <header>
+      <div class="logo-cont">
+        <img src="./assets/images/logo.png" alt="logo" />
+      </div>
+      <div class="h-container">
+        <div class="h-contact">
+          <div class="h-conact-info">
+            <p>24/7 services... Customer Care Available...</p>
+          </div>
+          <div class="h-conact-info">
+            <span class="material-symbols-outlined" class="ani-icon">
+              call
+            </span>
+            +91 8124311602
+          </div>
+        </div>
+        <div class="h-nav">
+          <ul>
+            <a href="./index.html"><li>Home</li></a>
+            <a href=""><li>About</li></a>
+            <a href="./index.html#sec-3"><li>Services</li></a>
+            <li id="loginButton">Login</li>
+
+            <a href="./assets/images/home/convinient.jpg"><li>Contact</li></a>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- header ends ---------------------------------------- -->
+    <!-- section 1  -->
+    <section style="margin-top: 100px; flex-direction: row">
+      <form action="" id="signUpForm">
+        <h2>
+          Sign Up
+          <span class="material-symbols-outlined" id="signLogOut">
+            cancel
+          </span>
+        </h2>
+        <div class="inputContainer">
+          <span class="material-symbols-outlined"> badge </span>
+          <input
+            required
+            type="text"
+            name=""
+            id="name"
+            pattern="[A-Za-z ]{3,30}"
+            title="name should not be more than 30 characters "
+            placeholder="Enter your Name "
+            value=""
+          />
+        </div>
+        <div class="inputContainer">
+          <span class="material-symbols-outlined"> call </span>
+          <input
+            required
+            type="text"
+            name=""
+            value=""
+            id="number"
+            pattern="[0-9]{10}"
+            placeholder="Enter your Number "
+          />
+        </div>
+        <div class="inputContainer">
+          <span class="material-symbols-outlined"> key </span>
+          <input
+            required
+            type="password"
+            name=""
+            value=""
+            id="password"
+            pattern="[A-Za-z0-9]{6,10}"
+            placeholder="Enter a password
+          "
+            title="password must be in alphaNumeric Characters between 6 to 10 "
+          />
+          <i id="eye" class="material-symbols-outlined">visibility </i>
+        </div>
+
+        <div class="inputContainer">
+          <span class="material-symbols-outlined"> key </span>
+          <input
+            required
+            pattern="[A-Za-z0-9]{6,10}"
+            type="password"
+            name=""
+            value=""
+            id="confirmPassword"
+            placeholder="Confirm password "
+            title="password must be in alphaNumeric Characters between 6 to 10 "
+          />
+          <i id="Ceye" class="material-symbols-outlined">visibility </i>
+        </div>
+
+        <button type="submit">Create Accout</button>
+        <h4>Already have an account ?</h4>
+        <h5 id="signLoginBtn">
+          <span class="material-symbols-outlined"> api </span>login here
+        </h5>
+      </form>
+
+      <form action="" id="loginForm">
+        <h2>
+          Login
+          <span class="material-symbols-outlined" id="LoginExit"> cancel </span>
+        </h2>
+        <div class="inputContainer">
+          <span class="material-symbols-outlined"> call </span>
+          <input
+            required
+            type="text"
+            name=""
+            id="loginNumber"
+            placeholder="Enter Your Number "
+          />
+        </div>
+        <div class="inputContainer">
+          <span class="material-symbols-outlined"> key </span>
+          <input
+            required
+            type="password"
+            name=""
+            id="loginPassword"
+            placeholder="Enter Your password "
+          />
+        </div>
+        <button type="submit">Login</button>
+        <h4>Don't have an account</h4>
+        <h5 id="LoginSignBtn">Sign up here</h5>
+      </form>
+      <div class="hero_left">
+        <div class="upper">
+          <img src="./assets/images/home/mechanic-holding-spanner.png" alt="" />
+        </div>
+      </div>
+
+      <div class="hero_right">
+        <h3>We are here for your vehicle</h3>
+        <h1>Your Vehicle Our Expertise</h1>
+        <p>
+          Find amazing service for your vehicle<br />
+          Handily connects you with the amazing professional Mechanic
+        </p>
+        <button id="signButton">Sign Up</button>
+      </div>
+
+      <!-- <img
+        src="./assets/images/hero wallpaper (2).png"
+        class="wallpaper"
+        alt="hero wallpaper"
+      /> -->
+    </section>
+    <!-- section 1 ended -->
+    <!-- section 2 started -->
+    <section class="sec2" style="background-color: black">
+      <div class="sec2Top">
+        <h2>
+          Reason to why choose our website <br />
+          for your vehicle service....?
+        </h2>
+        <p>
+          We know how important it is to have a reliable vehicle,<br />
+          and we're here to help make sure you can keep yours running smoothly.
+        </p>
+      </div>
+      <div class="sec2Bottom" id="sec2_bottom"></div>
+    </section>
+    <!-- section 2 end -->
+    <!-- section 3 started -->
+    <section class="sec3">
+      <div class="sec3_left">
+        <div class="sec3_left_1">
+          <h2>Reliable,Trusted <br />and professional services</h2>
+          <p>
+            These services are essential for ensuring that your vehicle is in
+            top condition <br />
+            and ready to take you wherever you need to go.<br />
+            Whether you need routine maintenance, repairs, or other services,<br />
+            a reliable and trusted provider <br />
+            will give you peace of mind and help keep you on the road safely.
+          </p>
+          <div class="innerdiv">
+            <h3>Services for all vehicles</h3>
+            <div>
+              <p>
+                <img src="./assets/images/home/motorbike.png" alt="bike" />
+                Two Wheelers
+                <img src="./assets/images/home/motorbike.png" alt="bike" />
+              </p>
+              <p>
+                <img src="./assets/images/home/tuk-tuk.png" alt="bike" />
+                Three wheelers
+                <img src="./assets/images/home/tuk-tuk.png" alt="bike" />
+              </p>
+              <p>
+                <img src="./assets/images/home/sport-car.png" alt="bike" />
+                Four wheelers
+
+                <img src="./assets/images/home/sport-car.png" alt="bike" />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec3_right">
+        <img src="./assets/images/home/service uncvkle.jpg" alt="mechanic" />
+      </div>
+    </section>
+
+    <!-- section 3 ended -->
+    <!-- section 4  -->
+    <section class="sec4" style="background-color: var(--dark)">
+      <div class="sec4_T">
+        <h2>Our Services</h2>
+      </div>
+      <div class="button_nav">
+        <button
+          type="button"
+          id="bike_b"
+          class="linkButton"
+          onclick="openServices('bike','bike_b')"
+        >
+          Bike
+        </button>
+        <button
+          type="button"
+          id="car_b"
+          class="linkButton"
+          onclick="openServices('car','car_b')"
+        >
+          Car
+        </button>
+        <button
+          type="button"
+          id="auto_b"
+          class="linkButton"
+          onclick="openServices('auto','auto_b')"
+        >
+          Auto
+        </button>
+      </div>
+      <div id="bike" class="sec4_container"></div>
+      <div id="car" class="sec4_container"></div>
+      <div id="auto" class="sec4_container"></div>
+    </section>
+    <!-- section 4 ended  -->
+    <!-- section 5 -->
+    <section class="sec5">
+      <div class="r_div">
+        <img src="./assets/images/home/sec-5img.png" alt="" />
+      </div>
+      <div class="l_div">
+        <h2>
+          Comfortable Services <br />
+          from your home
+        </h2>
+        <p>
+          Mechanics who offer mobile services are becoming increasingly popular
+          in the modern world. This is due to the convenience of having a
+          mechanic come to your home or workplace to perform maintenance and
+          repairs on your vehicle. Mobile mechanics save customers time and
+          money, and they offer a wide range of services. In this article, we
+          will discuss the benefits of using a mobile mechanic and the services
+          they can provide.
+        </p>
+        <button class="button">learn more</button>
+      </div>
+    </section>
+    <!-- workshop's div  -->
+    <div class="workShopContainer">
+      <h2>If you have a workshop</h2>
+      <h3>we are here to connect you to our customer</h3>
+      <div class="workshopCont">
+        <img
+          src="./assets/images/home/workshop/car-repair.png"
+          alt="repair car"
+        />
+        <img src="./assets/images/home/workshop/right.png" alt="right" />
+        <img
+          src="./assets/images/home/workshop/smartphone (1).png"
+          alt="mobile"
+        />
+        <img src="./assets/images/home/workshop/right.png" alt="right" />
+        <div class="workShopSignUp">
+          <img
+            src="./assets/images/home/workshop/mechanics.png"
+            alt="workshop img"
+          />
+        </div>
+      </div>
+      <h2>
+        More than 2000 Workshop Registered <br />and getting beniffitted daily
+        through our application
+      </h2>
+      <div class="workShopBottom">
+        <p>
+          "Looking to start a career in the automotive industry? Our online
+          vehicle workshop service offers a convenient pathway to success. Join
+          our program, acquire hands-on experience, and unlock job opportunities
+          in the automotive sector."
+        </p>
+        <a href="./pages/workShopSignUp.html">
+          <button>Register Your workshop</button>
+        </a>
+      </div>
+    </div>
+    <section class="reviewSection">
+      <h2>Our Reviews</h2>
+      <div class="reviewButton">
+        <button>Customers</button>
+        <button>Mechanics</button>
+      </div>
+      <div class="reviews">
+        <div class="reviewDiv">
+          <div class="card">
+            <div class="card-img">
+              <img src="./assets/images/admin/dash/admin.jfif" alt="" />
+            </div>
+            <div class="card-info">
+              <p class="text-body">
+                I recently used Reparo to book an appointment for my car's oil
+                change. The webpage was user-friendly and easy to navigate.
+              </p>
+              <p class="text-title">Rashu</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviewDiv">
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+            </div>
+            <div class="card-info">
+              <p class="text-body">
+                I recently used Reparo to book an appointment for my car's oil
+                change. The webpage was user-friendly and easy to navigate.
+              </p>
+              <p class="text-title">Rashu</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviewDiv">
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+            </div>
+            <div class="card-info">
+              <p class="text-body">
+                I recently used Reparo to book an appointment for my car's oil
+                change. The webpage was user-friendly and easy to navigate.
+              </p>
+              <p class="text-title">Rashu</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviewDiv">
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPfE79kAuZqhuFwwXpE_BZ3Sb0wTBx1yi9sg&usqp=CAU"
+                alt=""
+              />
+            </div>
+            <div class="card-info">
+              <p class="text-body">
+                I recently used Reparo to book an appointment for my car's oil
+                change. The webpage was user-friendly and easy to navigate.
+              </p>
+              <p class="text-title">Rashu</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviewDiv">
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ln9aX_XKOwJRp3QPSl159G_Itc1anvF9JQ&usqp=CAU"
+                alt=""
+              />
+            </div>
+            <div class="card-info">
+              <p class="text-body">
+                I recently used Reparo to book an appointment for my car's oil
+                change. The webpage was user-friendly and easy to navigate.
+              </p>
+              <p class="text-title">Rashu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec6">
+      <div class="msg">
+        <img src="./assets/images/home/Messages-pana.png" alt="Message" />
+        <h2>Send us Message</h2>
+        <p>Email us with a simple form and we'll respond within 5 to 6 days</p>
+        <button class="button">Send message</button>
+      </div>
+      <div class="complaint">
+        <img src="./assets/images/home/complaint.jpg" alt="COMPLAINT" />
+        <h2>Make a Complaint</h2>
+        <p>
+          If You're not happy with the service which you got from our company,
+          call us or send us an email and let us know
+        </p>
+        <button class="button">Make a Complaint</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="contact">
+        <h2>Contact Us</h2>
+        <hr />
+        <p>
+          123 Main Street<br />
+          City, State Zip<br />
+          Phone: 123-456-7890<br />
+          Email: reparo@mechanicalservice.com
+        </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="mailto:info@mechanicalservice.com"
+            ><i class="far fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
+    <script src="./assets/javascript/sourceApi/apiService.js"></script>
+    <script src="./assets/javascript/validationFunctions.js"></script>
+    <script src="./assets/javascript/index.js"></script>
+    <script src="./assets/javascript/buildedfunction.js"></script>
+    <script src="./pages/javascript/json.js"></script>
+  </body>
+</html>

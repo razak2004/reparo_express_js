@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.css"
+    />
+
+    <title>Work shopDashboard</title>
+    <!-- <link rel="stylesheet" href="../../assets/css/admin.css" /> -->
+    <link rel="stylesheet" href="../../assets/css/workShop.css" />
+    <link rel="stylesheet" href="../../assets/css/workshopActivity.css" />
+  </head>
+
+  <body>
+    <nav>
+      <img src="../../assets/images/logo.png" alt="logo" />
+      <ul>
+        <li>
+          <a href="./workshop.html">
+            <i class="material-symbols-outlined"> dashboard </i>
+            <p>Home</p>
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="./workshopActivity.html"
+            style="background-color: white; color: black"
+          >
+            <i class="material-symbols-outlined"> activity_zone </i>
+            <p>Bookings</p>
+          </a>
+        </li>
+        <li>
+          <a href="./workshopProfile.html">
+            <i class="material-symbols-outlined"> account_circle </i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li>
+          <a href="./workshopService.html">
+            <i class="material-symbols-outlined"> notifications </i>
+            <p>Your Services</p>
+          </a>
+        </li>
+        <li>
+          <a href="" id="settings">
+            <i class="material-symbols-outlined"> settings </i>
+            <p>Settings</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <h2 id="headBooking"></h2>
+      <div id="otpDiv"></div>
+      <div class="serviceDetail" id="serviceDetailDiv" style="display: none">
+        <h4>Service List <button id="cancelButton">Cancel Booking</button></h4>
+        <div class="serviceLists"></div>
+        <div class="btnContainer">
+          <button id="addserviceButtom">
+            <span class="material-symbols-outlined"> add_task </span>Add Service
+          </button>
+          <p>Total : <span id="Total"></span></p>
+        </div>
+
+        <button id="sendButton">
+          <span class="material-symbols-outlined"> rocket_launch </span> Send to
+          Customer
+        </button>
+      </div>
+      <form id="createServiceForm" style="display: none">
+        <h4>
+          <span
+            onclick="closeCreateServiceForm()"
+            class="material-symbols-outlined"
+          >
+            text_select_jump_to_beginning </span
+          >Add Service
+        </h4>
+        <div class="info">
+          <span class="material-symbols-outlined"> settings </span>
+          <input
+            type="text"
+            required
+            id="serviceName"
+            placeholder="ServiceName"
+          />
+        </div>
+        <div class="info">
+          <span class="material-symbols-outlined"> currency_rupee </span>
+          <input
+            type="text"
+            required
+            id="servicePrice"
+            pattern="[0-9]{1,4}"
+            title="price should not be more than 9999 or less than 0 and doesnot contain empty space"
+            placeholder="Service Price"
+          />
+        </div>
+        <button type="submit">
+          <span class="material-symbols-outlined"> library_add </span> Add
+          Service
+        </button>
+      </form>
+
+      <div class="bookingContainer" id="bookingContainer"></div>
+    </section>
+    <section class="rocket_launch"></section>
+    <script src="https://cdn.jsdelivr.net/gh/suryaumapathy2812/notify__js/notify.js"></script>
+    <script src="../../assets/javascript/validationFunctions.js"></script>
+    <script src="../../assets/javascript/sourceApi/apiService.js"></script>
+    <script src="../../assets/javascript/workshop/workshopDOMFunction.js"></script>
+    <script src="../../assets/javascript/workshop/workshopBooking.js"></script>
+    <!-- <script src="../../assets/javascript/workshopApiFunction.js"></script> -->
+    <!-- <script src="../../assets/javascript/workshopApi.js"></script> -->
+  </body>
+</html>

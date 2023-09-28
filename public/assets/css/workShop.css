@@ -1,0 +1,423 @@
+:root {
+  --red: #fe3044;
+  --info: #28a745;
+
+  --white: rgba(237, 237, 237, 0.806);
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--white);
+  display: flex;
+  font-family: "Lexend Deca", sans-serif;
+}
+nav {
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+}
+nav ul {
+  list-style: none;
+  width: 100%;
+}
+nav ul li a {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  padding-left: 10px;
+  align-items: center;
+  text-decoration: none;
+  gap: 6%;
+  margin-right: 20px;
+
+  color: white;
+  font-size: 18px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+nav li {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav a:hover {
+  color: black;
+  background-color: white;
+}
+nav img {
+  width: 60%;
+  height: 150px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+.workshopSection {
+  margin-left: 260px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3%;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+}
+.bookingCard {
+  width: 350px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  margin-top: 20px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-radius: 20px;
+}
+.bookingCard h2 {
+  font-size: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  align-items: center;
+}
+.bookingMid {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--white);
+}
+.bookingBottom,
+.cancledBooking {
+  height: 30%;
+  width: 100%;
+  gap: 5%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: antiquewhite; */
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+.cancledBooking {
+  width: 90%;
+  background-color: var(--red);
+  color: white;
+  height: 100px;
+  border-radius: 30px;
+}
+.buttonContainer {
+  width: 95%;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  border-radius: 20px;
+  background-color: black;
+}
+.bookingBottom button {
+  display: flex;
+  font-size: 20px;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  height: 80%;
+  border: 2px solid white;
+  font-family: "Lexend Deca", sans-serif;
+}
+.accept,
+.reject {
+  width: 45%;
+
+  outline: none;
+}
+.direction {
+  width: 95%;
+  background-color: #555;
+  color: white;
+  border: 2px solid white;
+}
+.reject {
+  background-color: var(--red);
+  color: white;
+}
+.accept {
+  background-color: var(--info);
+  color: white;
+}
+.outputCont,
+.outputContainer {
+  width: 95%;
+  height: 50px;
+  border-radius: 20px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+.outputContainer {
+  height: 100px;
+  flex-direction: column;
+}
+
+/* Connection card  */
+.connectVerification {
+  width: 330px;
+  height: 360px;
+  background-color: white;
+  border-radius: 30px;
+  /* box-shadow: 5px black; */
+  margin-top: 100px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.connectVerification button {
+  width: 90%;
+  height: 50px;
+  background-color: black;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  justify-content: center;
+}
+.connectVerification button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.connectVerification form {
+  height: 150px;
+  width: 90%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10%;
+  border-radius: 20px;
+}
+.otpInput {
+  width: 90%;
+  height: 50px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 16px;
+  display: flex;
+  gap: 4%;
+  align-items: center;
+  font-size: 30px;
+  justify-content: center;
+}
+.otpInput input {
+  height: 40px;
+  width: 61%;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding-left: 50px;
+
+  background-color: black;
+}
+.connectVerification form button {
+  margin-top: 16px;
+  background-color: var(--info);
+  color: white;
+  border: 2px solid white;
+}
+
+/* Service list  */
+.serviceList {
+  margin-top: 100px;
+  width: 400px;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-radius: 20px;
+}
+.serviceList h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7%;
+  margin-top: -2px;
+}
+.serviceList h2 button {
+  width: 30%;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  font-size: 20px;
+}
+.serviceList h2 button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.serviceContainer {
+  width: 98%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  border-radius: 20px;
+  background-color: var(--white);
+  margin-top: 10px;
+  /* justify-content: center; */
+  padding-left: 10px;
+  border-bottom: 1px solid black;
+}
+.serviceContainer span {
+  font-size: 35px;
+}
+.serviceContainer h4 {
+  width: 60%;
+  /* background-color: #555; */
+}
+.serviceContainer input {
+  width: 50px;
+  height: 30px;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  padding-left: 10px;
+  font-size: 15px;
+}
+.serviceList h3 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2%;
+  height: 50px;
+  justify-content: center;
+  /* margin-left: 100px; */
+}
+.serviceList button {
+  width: 95%;
+  margin-left: 10px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  font-size: 18px;
+  background-color: black;
+}
+.serviceList button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+#total {
+  width: 120px;
+  height: 30px;
+  background-color: black;
+  padding-left: 20px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.waitingResponse {
+  width: 300px;
+  height: 450px;
+  background-color: white;
+  border-radius: 30px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5%;
+}
+.waitingResponse img {
+  width: 95%;
+  height: 60%;
+  border-radius: 30px;
+}
+.waitingResponse a {
+  width: 80%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  font-size: 20px;
+  border-radius: 20px;
+  /* border-bottom: 2px solid black; */
+}
+.waitingResponse a:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+}
+.acceptService {
+  width: 230px;
+  margin-top: 100px;
+  height: 250px;
+  border-radius: 30px;
+  background-color: white;
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+}
+.acceptService button {
+  width: 60%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+}

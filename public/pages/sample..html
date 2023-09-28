@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Rotating Animation</title>
+    
+  </head>
+  <body>
+    <button onclick="test()"> test</button>
+    
+    </div>
+    <script src="../assets/javascript/sourceApi/userApiService.js"></script>
+    <script> 
+    const userService =  new WorkshopServiceApi();
+    let user = {
+      name : "check",
+      number: 9812345600,
+      password: "chk123",
+      role:3
+
+    }
+    function test(){
+      let resp = userService.getAllWorkshops(2);
+ 
+    console.log("resp ",resp);
+    }
+    
+  
+    </script>
+  </body>
+</html>

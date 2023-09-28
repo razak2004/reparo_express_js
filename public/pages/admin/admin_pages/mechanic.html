@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Mechanics panel</title>
+    <link rel="stylesheet" href="../../../assets/css/admin.css" />
+    <style>
+      .cust {
+        width: 200px;
+        height: 300px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        gap: 4%;
+        border: 2px solid black;
+      }
+      .cust img {
+        border: 2px solid black;
+        border-radius: 30px;
+        width: 80%;
+        height: 60%;
+      }
+      h2 {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 40%;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        gap: 10%;
+        align-items: center;
+      }
+      a:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+      .detailCard {
+        width: 95%;
+        height: 100%;
+        background-color: white;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        margin-top: -30px;
+      }
+      header {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        padding: 10px;
+        /* border-top: 1px solid black; */
+      }
+      header span {
+        color: red;
+      }
+      header span:hover {
+        cursor: pointer;
+        scale: 1.2;
+      }
+      section {
+        width: 100%;
+        height: 90%;
+        /* background-color: aqua; */
+        /* border-top: 1px solid black; */
+        display: flex;
+        /* flex-direction: column; */
+        /* flex-wrap: wrap; */
+        justify-content: center;
+        align-items: center;
+        /* padding-left: 260px; */
+        /* justify-content: center; */
+        gap: 3%;
+        background-color: #f5f5f5;
+      }
+      .leftContainer {
+        width: 45%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 2%;
+
+        /* background-color: antiquewhite; */
+      }
+      .rightContainer {
+        width: 43%;
+        height: 92%;
+        background-color: white;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        /* padding-top: 10px; */
+        align-items: center;
+      }
+      .activity {
+        background-color: #f5f5f5;
+        height: 95%;
+        width: 95%;
+        border-radius: 20px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+      }
+      .imgContainer {
+        width: 35%;
+        height: 98%;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        border: 1px solid black;
+      }
+      .imgContainer img {
+        border: 1px solid black;
+        width: 80%;
+        height: 70%;
+        background-color: white;
+        border-radius: 20px;
+      }
+      .content {
+        height: 60%;
+      }
+      .output {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: start;
+        gap: 10%;
+        /* border-bottom: 1px solid gray; */
+        height: 4%;
+      }
+      .personalDetail {
+        padding: 10px;
+        /* overflow-x: scroll; */
+        width: 600px;
+        height: 240px;
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        background-color: white;
+        border-radius: 20px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 3%;
+        /* border: 1px solid black; */
+        /* justify-content: center; */
+      }
+      .contentContainer {
+        height: 220px;
+        width: 60%;
+
+        flex-direction: column;
+        padding-top: 2px;
+
+        background-color: #f5f5f5;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        overflow-y: scroll;
+        /* overflow: auto; */
+
+        align-items: center;
+        border: 1px solid black;
+      }
+      .content {
+        width: 90%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4%;
+        padding-left: 10px;
+        margin: 10px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div class="logo">
+          <img src="../../../assets/images/logo.png" alt="logo" />
+        </div>
+        <div class="search">
+          <input type="text" name="search" placeholder="search here" />
+          <label for="search"><i class="fas fa-search"></i></label>
+        </div>
+        <i class="fas fa-bell"></i>
+        <div class="user">
+          <img
+            class="a_pro"
+            src="../../../assets/images/admin/dash/admin.jfif"
+            alt="user"
+          />
+        </div>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a href="../dashboard.html">
+              <i class="material-symbols-outlined"> dashboard </i>
+              <div>Dashboard</div>
+            </a>
+          </li>
+          <li>
+            <a href="./customer.html">
+              <i class="material-symbols-outlined"> diversity_3 </i>
+              <div>Customers</div>
+            </a>
+          </li>
+          <li>
+            <a href="./mechanic.html">
+              <i class="material-symbols-outlined"> engineering </i>
+              <div>Mechanics</div>
+            </a>
+          </li>
+          <li>
+            <a href="./seller.html">
+              <i class="material-symbols-outlined"> sell </i>
+              <div>Sellers</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-symbols-outlined"> insert_chart </i>
+              <div>Analytics</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-symbols-outlined"> currency_rupee </i>
+              <div>Earnings</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-symbols-outlined"> settings </i>
+              <div>Settings</div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-symbols-outlined"> contact_support </i>
+              <div>Help</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main">
+        <h2>Your Mechanics <span id="no"></span></h2>
+        <div class="cards" id="appCard"></div>
+        <div class="detailCard">
+          <header>
+            <h2>Mechanic Details</h2>
+            <span onclick="exitDetail()" class="material-symbols-outlined">
+              logout
+            </span>
+          </header>
+          <section>
+            <div class="leftContainer">
+              <div class="personalDetail">
+                <div class="imgContainer">
+                  <h3>Personal Details</h3>
+                  <img
+                    id="detailImg"
+                    alt="mechanic Image
+                  "
+                  />
+                </div>
+                <div class="contentContainer">
+                  <div class="content">
+                    <h4>User ID :</h4>
+                    <p id="userId"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Name :</h4>
+                    <p id="dName"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Phone :</h4>
+                    <p id="dNum"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Email :</h4>
+                    <p id="dEmail"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Password :</h4>
+                    <p id="dPass"></p>
+                  </div>
+                  <div class="content">
+                    <h4>specialized in :</h4>
+                    <p id="specialized"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Experience :</h4>
+                    <p id="experience"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="personalDetail">
+                <div class="imgContainer">
+                  <h3>Workshop Details</h3>
+                  <img id="WorkshopImage" alt="workShop image" />
+                </div>
+                <div class="contentContainer">
+                  <div class="content">
+                    <h4>Workshop id :</h4>
+                    <p id="workshopId"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Workshop Name :</h4>
+                    <p id="workshopName"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Workshop Number :</h4>
+                    <p id="workshopNum"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Workshop Address :</h4>
+                    <p id="workshopAddress"></p>
+                  </div>
+                  <div class="content">
+                    <h4>City :</h4>
+                    <p id="city"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Open at :</h4>
+                    <p id="open"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Close at :</h4>
+                    <p id="close"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Start at :</h4>
+                    <p id="start"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Workshop Type :</h4>
+                    <p id="type"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="personalDetail">
+                <div class="imgContainer">
+                  <h3>Service Details</h3>
+                  <img id="detailImg" alt="service image" />
+                </div>
+                <div class="contentContainer">
+                  <div class="content">
+                    <h4>Service ID :</h4>
+                    <p id="serviceId"></p>
+                  </div>
+                  <div class="content">
+                    <h4>General service @ :</h4>
+                    <p id="generalCost"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Standard Service @ :</h4>
+                    <p id="standardCost"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Premeium Service @ :</h4>
+                    <p id="premeiumCost"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Electric Service @ :</h4>
+                    <p id="electricCost"></p>
+                  </div>
+                  <div class="content">
+                    <h4>Break down Service @ :</h4>
+                    <p id="brkdownCost"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rightContainer">
+              <div class="activity">
+                <h3>Activity</h3>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="../admin.js"></script>
+    <script>
+      createCard(mechArray, "appCard", "mechDetails");
+      let num = document.getElementById("no");
+      num.innerText = "No-Of-Mechanics  : " + m;
+    </script>
+  </body>
+</html>

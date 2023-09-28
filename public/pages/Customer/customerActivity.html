@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Notifications</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/customer.css" />
+    <link rel="stylesheet" href="../../assets/css/customerActivity.css" />
+    <style>
+      /*  */
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        height: 600px;
+        border: 2px solid black;
+        margin-top: 20px;
+        background-color: white;
+        border-radius: 50px;
+      }
+      section img {
+        width: 250px;
+        height: 400px;
+      }
+      button {
+        width: 200px;
+        height: 60px;
+        border-radius: 20px;
+        border: 3px solid black;
+        background-color: #fe3044;
+        color: white;
+        /* margin-top: 10px; */
+        font-size: 20px;
+      }
+      .timer {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 3%;
+        width: 70%;
+      }
+      span {
+        font-size: 25px;
+        /* color: rgb(0, 255, 0); */
+      }
+      #notFind {
+        display: none;
+      }
+      #notFind button {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="../../assets/images/logo.png" alt="logo" />
+     <ul>
+        <li>
+          <a href="./cust.html" >
+            <i class="material-symbols-outlined"> dashboard </i>
+            <p>Home</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="./customerActivity.html" style="background-color: white; color: #fe3044">
+            <i class="material-symbols-outlined"> activity_zone </i>
+            <p>Booking</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="./cus_profile.html">
+            <i class="material-symbols-outlined"> account_circle </i>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li>
+          <a href="./customerService.html">
+            <i class="material-symbols-outlined"> local_activity </i>
+            <p>Your Services</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="material-symbols-outlined"> settings </i>
+            <p>Settings</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="sectionDiv">
+      <h2 id="bookingNotfound">You have'nt raised a request</h2>
+      <div class="waitingCard" id="waitingCard" style="display: none">
+        <img src="../../assets/images/customer/way.gif" alt="" />
+        <h4>
+          <i id="workshopNo">Searching Workshops</i>
+          <i class="material-symbols-outlined"> settings_input_antenna </i>
+        </h4>
+
+        <button id="cancelButton">Cancel Request</button>
+      </div>
+      <div class="otpCard"></div>
+      <div class="waitingCard" id="serviceWaitingCard" style="display: none">
+        <img src="../../assets/images/waiting.gif" alt="waiting" />
+        <p>Wait For Few Minutes your Service list </p> has been preparing</p>
+      </div>
+      <div class="serviceDetail" id="serviceDetailDiv" style="display: none">
+        <h4>Services For Your Vehicle </h4>
+        <div class="serviceLists"></div>
+        <div class="btnCont">
+          <button id="accBtn"><p>Accept</p> <i class="material-symbols-outlined">
+currency_rupee
+</i> <p id="totalRupees"></p></button>
+          <button id="cancelBtn" style="background-color: #fe3044;">Cancel</button>
+        </div>
+        
+
+        
+      </div>
+
+      <div class="workshopContain" id="container"></div>
+    </div>
+    <script src="../../assets/javascript/sourceApi/apiService.js"></script>
+    <script src="../../assets/javascript/validationFunctions.js"></script>
+    <script src="../../assets/javascript/customer/customerDOMFunctions.js"></script>
+    <script src="../../assets/javascript/customer/customerActivity.js"></script>
+
+    <!-- <script src="../../assets/javascript/customerApiFunctions.js"></script>
+
+    <script src="../../assets/javascript/customerBookingApi.js"></script>
+
+    <script src="../../assets/javascript/customerActivityApi.js"></script> -->
+  </body>
+</html>
