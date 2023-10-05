@@ -229,7 +229,7 @@ if (signUpForm != null) {
         name,
         number,
         password,
-        role: 2,
+        role: 3,
       };
       // service is form user Service class
       let response = UserServiceApi.createUser(data);
