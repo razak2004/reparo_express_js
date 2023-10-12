@@ -8,19 +8,24 @@ let liveBookingId = sessionStorage.getItem("liveAcceptedBookingId");
 if (liveBookingId == null) {
   let bookingResponse = WorkshopServiceApi.findBookings(workshop.workshopId);
   let bookings = JSON.parse(bookingResponse.data);
-  if (bookings.length != 0) {
-    for (let i = 0; i < bookings.length && i < 3; i++) {
-      if (bookings[i]["live"]) {
-        createBookingCard(
-          bookings[i],
-          "bookingContainer",
-          workshop["workshopId"]
-        );
-      }
-    }
-    console.log(bookings);
-  } else {
+  if (bookings == null) {
     document.getElementById("headBooking").innerText = "No available bookings";
+  } else {
+    if (bookings.length != 0) {
+      for (let i = 0; i < bookings.length && i < 3; i++) {
+        if (bookings[i]["live"]) {
+          createBookingCard(
+            bookings[i],
+            "bookingContainer",
+            workshop["workshopId"]
+          );
+        }
+      }
+      console.log(bookings);
+    } else {
+      document.getElementById("headBooking").innerText =
+        "No available bookings";
+    }
   }
 } else {
   let bookingId = tokenToId(liveBookingId);
