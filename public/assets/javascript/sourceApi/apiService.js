@@ -315,6 +315,26 @@ class BookingServiceApi {
     xhr.send(JSON.stringify(booking));
     return JSON.parse(response);
   }
+  static updateLiveBooking(booking) {
+    let xhr = new XMLHttpRequest();
+    const url = "http://localhost:8080/api/reparo/booking/updateBooking";
+    xhr.open("PUT", url, false);
+    xhr.setRequestHeader("Content-Type", "application/json", "application/xml");
+    let response;
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // Successful response
+        response = xhr.responseText;
+      } else {
+        console.error("Error:", xhr.statusText);
+      }
+    };
+    xhr.onerror = function () {
+      console.error("Network error occurred");
+    };
+    xhr.send(JSON.stringify(booking));
+    return JSON.parse(response);
+  }
   // workshopId,bookingId,OTP,
   static acceptBooking(acceptObj) {
     let xhr = new XMLHttpRequest();

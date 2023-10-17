@@ -38,6 +38,26 @@ if (liveBookingId == null) {
   }
   if (bookingData["otp"] != 0) {
     createOtpCard("#otpDiv", bookingData);
+
+    const btn = document.getElementById("liveBtn");
+    btn.style.display = "flex";
+    btn.addEventListener("click", () => {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(async function (position) {
+          // Get the latitude and longitude from the position object
+          let latitude = await position.coords.latitude;
+          let longitude = await position.coords.longitude;
+
+          let booking = { id: bookingId, role: 3, latitude, longitude };
+          let bookResp = BookingServiceApi.updateLiveBooking(booking);
+          console.log(JSON.parse(bookResp.data));
+        });
+      }
+    });
+
+    // setInterval(() => {
+    //   btn.click();
+    // }, 2000);
   } else {
     let serviceListResponse = ServiceListServiceApi.findServiceListByBookingId(
       bookingData["bookingId"]
@@ -91,3 +111,6 @@ if (liveBookingId == null) {
   }
   console.log(bookingData);
 }
+
+let button = document.createElement("input");
+button.click();
