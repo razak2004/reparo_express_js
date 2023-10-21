@@ -80,6 +80,31 @@
     </nav>
     <section>
       <h2 id="headBooking"></h2>
+      <div class="liveTrack">
+        <div class="liveContent">
+          <img src="../../assets/images/confused.gif" alt="watch" />
+          <p><i id="customerName">Customer</i> is Waiting for you !!</p>
+        </div>
+
+        <div class="liveLocation">
+          <img src="../../assets/images/mechanic.gif" alt="location" />
+
+          <span id="line">
+            <img
+              src="../../assets/images/motorcycle.gif"
+              id="motorBike"
+              alt="motorCycle"
+          /></span>
+          <img src="../../assets/images/location.gif" alt="location" />
+        </div>
+        <div class="liveContent">
+          <img src="../../assets/images/measure-distance.png" alt="distance" />
+          <p><span id="distanceKm"> 0 </span> km away</p>
+          <img src="../../assets/images/stopwatch.gif" alt="watch" />
+          <p><span id="time"> 00 </span> mins to reach</p>
+        </div>
+      </div>
+
       <div id="otpDiv">
         <button id="liveBtn" style="display: none">live</button>
       </div>
@@ -141,7 +166,106 @@
     <script src="../../assets/javascript/sourceApi/apiService.js"></script>
     <script src="../../assets/javascript/workshop/workshopDOMFunction.js"></script>
     <script src="../../assets/javascript/workshop/workshopBooking.js"></script>
-    <!-- <script src="../../assets/javascript/workshopApiFunction.js"></script> -->
-    <!-- <script src="../../assets/javascript/workshopApi.js"></script> -->
+    <script>
+      function calculateBearing(lat1, lon1, lat2, lon2) {
+        var y = Math.sin(lon2 - lon1) * Math.cos(lat2);
+        var x =
+          Math.cos(lat1) * Math.sin(lat2) -
+          Math.sin(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1);
+        var bearing = Math.atan2(y, x);
+        return (bearing * (180 / Math.PI) + 360) % 360;
+      }
+
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        var R = 6371; // Radius of the earth in km
+        var dLat = deg2rad(lat2 - lat1);
+        var dLon = deg2rad(lon2 - lon1);
+        var a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(deg2rad(lat1)) *
+            Math.cos(deg2rad(lat2)) *
+            Math.sin(dLon / 2) *
+            Math.sin(dLon / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var d = R * c; // Distance in km
+        return d;
+
+        function deg2rad(deg) {
+          return deg * (Math.PI / 180);
+        }
+      }
+
+      function calculateNewCoordinates(lat1, lon1, bearing, distance) {
+        var R = 6371; // Radius of the earth in km
+        var d = distance / R; // Convert distance to angular distance in radians
+        var lat2 = Math.asin(
+          Math.sin(lat1) * Math.cos(d) +
+            Math.cos(lat1) * Math.sin(d) * Math.cos(bearing)
+        );
+        var lon2 =
+          lon1 +
+          Math.atan2(
+            Math.sin(bearing) * Math.sin(d) * Math.cos(lat1),
+            Math.cos(d) - Math.sin(lat1) * Math.sin(lat2)
+          );
+        return { latitude: lat2, longitude: lon2 };
+      }
+
+      let dis;
+      const point1 = { latitude: 13.0426602, longitude: 80.1701788 };
+      const point2 = { latitude: 13.0526602, longitude: 80.1701788 };
+
+      // Distance to move Point 2 towards Point 1 every 1 or 2 seconds (in meters)
+      const moveDistance = 100; // You can change this value as needed
+
+      // Function to update the position of Point 2
+      function updatePoint2Position() {
+        const bearing = calculateBearing(
+          point2.latitude,
+          point2.longitude,
+          point1.latitude,
+          point1.longitude
+        );
+        const newCoordinates = calculateNewCoordinates(
+          point2.latitude,
+          point2.longitude,
+          bearing,
+          moveDistance
+        );
+        point2.latitude = newCoordinates.latitude;
+        point2.longitude = newCoordinates.longitude;
+      }
+
+      setInterval(() => {
+        dis = calculateDistance(
+          point1.latitude,
+          point1.longitude,
+          point2.latitude,
+          point2.longitude
+        );
+
+        console.log(dis);
+        if (dis > 0) {
+          updatePoint2Position();
+        }
+      }, 1000);
+
+      // Set an interval to update the position of Point 2 every 1 or 2 seconds
+      // Change the interval duration as needed (1000 ms = 1 second)
+
+      function liveTrack(dis, i, mar) {
+        let distance = document.getElementById("distanceKm");
+        let time = document.getElementById("time");
+        let bike = document.getElementById("motorBike");
+        bike.style.marginLeft = mar * i + "%";
+
+        distance.innerText = dis;
+      }
+      // setInterval(() => {
+      //   liveTrack(dis, i, mar);
+      //   dis = dis - 1;
+      //   i = dist - dis;
+      // }, 4000);
+    </script>
   </body>
 </html>

@@ -37,27 +37,44 @@ if (liveBookingId == null) {
     window.location.reload();
   }
   if (bookingData["otp"] != 0) {
+    // Live Tracking  ;
     createOtpCard("#otpDiv", bookingData);
+    // const lat = bookingData.bookedLatitude;
+    // const lon = bookingData.bookedLongitude;
+    // const meclat = bookingData.mecLatitude;
+    // const meclon = bookingData.mecLongitude;
+    // let dif = lat - meclat;
+    // let disLon = lon - meclon;
+    // let difCom = dif / 10;
+    // let i = 1;
 
-    const btn = document.getElementById("liveBtn");
-    btn.style.display = "flex";
-    btn.addEventListener("click", () => {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(async function (position) {
-          // Get the latitude and longitude from the position object
-          let latitude = await position.coords.latitude;
-          let longitude = await position.coords.longitude;
+    // console.log(dif + " " + difCom);
 
-          let booking = { id: bookingId, role: 3, latitude, longitude };
-          let bookResp = BookingServiceApi.updateLiveBooking(booking);
-          console.log(JSON.parse(bookResp.data));
-        });
-      }
-    });
+    // const btn = document.getElementById("liveBtn");
+    // btn.style.display = "flex";
+    // btn.addEventListener("click", () => {
+    //   if ("geolocation" in navigator) {
+    //     navigator.geolocation.getCurrentPosition(async function (position) {
+    //       // Get the latitude and longitude from the position object
+    //       let latitude = await position.coords.latitude;
+    //       let longitude = await position.coords.longitude;
+    //       latitude = latitude - difCom * i;
+    //       i++;
 
+    //       let booking = { id: bookingId, role: 3, latitude, longitude };
+    //       let bookResp = BookingServiceApi.updateLiveBooking(booking);
+    //       let data = JSON.parse(bookResp.data);
+    //       console.log(data);
+    //       let distance = document.getElementById("distanceKm");
+    //       distance.innerText = data.distance;
+    //     });
+    //   }
+    // });
     // setInterval(() => {
     //   btn.click();
-    // }, 2000);
+    // }, 4000);
+    // Live Tracking
+    // Initial coordinates of Point 1 and Point 2
   } else {
     let serviceListResponse = ServiceListServiceApi.findServiceListByBookingId(
       bookingData["bookingId"]
